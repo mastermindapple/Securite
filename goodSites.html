@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>   
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>  
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+        <script>
+          var firebaseConfig = {
+            apiKey: "AIzaSyBj2NB7kKO8se9wRyEjWhzJj-CtnBylz3c",
+            authDomain: "security-9436e.firebaseapp.com",
+            databaseURL: "https://security-9436e.firebaseio.com",
+            projectId: "security-9436e",
+            storageBucket: "security-9436e.appspot.com",
+            messagingSenderId: "502052136304",
+            appId: "1:502052136304:web:8b84ad2de753885691dbb5",
+            measurementId: "G-8XP8E428XK",
+          };
+    
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+        </script>
+        <style>
+          body{
+            font-family: 'Roboto';
+          }
+          table {
+            border-collapse: collapse;
+            width: 1000px;
+           
+          }
+          
+          td {
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            font-size: 15px;
+          }
+          th{
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid rgb(97, 191, 216);
+            background-color: rgb(97, 191, 216);
+            font-size: 30px;
+          }
+          .row{
+            font-size: 18px;
+            height: auto;
+            width: 17.5%;
+          }
+          .row:hover {background-color:#f5f5f5;cursor: pointer;}
+
+          .sidenav {
+          height: 100%;
+          width: 15%;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          padding-top: 20px;
+          display: block;
+          margin-right: 10px;
+        }
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.6s;
+}
+
+.sidenav a:hover {
+  color: #111;
+  background-color: white;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+        #chartContainer{
+          visibility: hidden;
+        }
+        #goodSites{
+            background-color: white;
+            color: black;
+        }
+        .urls{
+            width: 700px;
+            height: auto;
+            display: inline-block;
+            word-wrap: break-word;
+            margin-bottom: 20px;
+        }
+        center{
+          margin-left: 75px;
+        }
+          </style>
+    </head>
+    <body>
+      <div class="sidenav">
+        <a href="home.html" id="home">Home</a>
+        <a href="badSites.html" id="active">Explicit sites</a>
+        <a href="goodSites.html" id="goodSites">Normal sites</a>
+        <a href="add-child.html" id="addChild">Add Child</a>
+        <a href="tutorial.html">How to use?</a>
+        <a href="about.html">About</a>
+        <a href="signout.html">Sign Out</a>
+      </div>
+      <center>
+      <h1 id="error-handler" class="error-handler"></h1>
+      <table id="table">
+        <tr>
+          <th>Url</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </table>      
+      </center> 
+        <script src="js/goodSites.js"></script>
+    </body>
+</html>
+
+
+

@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <title>Sign Up</title>
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+
+    <link rel="stylesheet" href="demo.css" />
+    <link rel="stylesheet" href="sky-forms.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyBj2NB7kKO8se9wRyEjWhzJj-CtnBylz3c",
+        authDomain: "security-9436e.firebaseapp.com",
+        databaseURL: "https://security-9436e.firebaseio.com",
+        projectId: "security-9436e",
+        storageBucket: "security-9436e.appspot.com",
+        messagingSenderId: "502052136304",
+        appId: "1:502052136304:web:8b84ad2de753885691dbb5",
+        measurementId: "G-8XP8E428XK",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+  </head>
+  <body class="bg-cyan">
+    <div class="body body-s">
+      <form class="sky-form">
+        <header>Sign up to Securite</header>
+        <fieldset>
+          <section>
+              <h1 id="error-message"></h1>
+            <label class="input">
+              <i class="icon-append icon-user"></i>
+              <input type="text" placeholder="Username" id="username" />
+              <b class="tooltip tooltip-bottom-right"
+                >Only English characters and numbers</b
+              >
+            </label>
+          </section>
+
+          <section>
+            <label class="input">
+              <i class="icon-append icon-envelope-alt"></i>
+              <input type="email" placeholder="Email address" id="email"/>
+              <b class="tooltip tooltip-bottom-right"
+                >Your email address</b
+              >
+            </label>
+          </section>
+
+          <section>
+            <label class="input">
+              <i class="icon-append icon-lock"></i>
+              <input type="password" placeholder="Password" id="password"/>
+              <b class="tooltip tooltip-bottom-right"
+                >Only English characters and numbers</b
+              >
+            </label>
+          </section>
+
+          <section>
+            <label class="input">
+              <i class="icon-append icon-lock"></i>
+              <input type="password" placeholder="Confirm password" id="password-confirm" />
+              <b class="tooltip tooltip-bottom-right"
+                >Only English  characters and numbers</b
+              >
+            </label>
+          </section>
+        </fieldset>
+
+        <fieldset>
+          <div class="row">
+            <section class="col col-6">
+              <label class="input">
+                <input type="text" placeholder="First name" id="name-first"/>
+              </label>
+            </section>
+            <section class="col col-6">
+              <label class="input">
+                <input type="text" placeholder="Last name" id="name-last"/>
+              </label>
+            </section>
+          </div>
+        </fieldset>
+        <footer>
+          <a href="login.html">Or Login</a>
+          <button id="submit-btn" type="button" class="button">Sign Up!</button>
+        </footer>
+      </form>
+    </div>
+    <script src="js/signup.js"></script>
+  </body>
+</html>
