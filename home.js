@@ -62,7 +62,7 @@ function getUser() {
 
         content.classList = "content";
         content.innerHTML =
-          "You can start by installing the chrome extension from Lorem <br>and start browsing the web.";
+          "You can start by installing the chrome extension from <a href='extension.crx' target='_blank'>Here</a><br>After you are done downloading the file, open a new tab and type <br> 'chrome://extensions', enable developer mode, refresh the page and drag and drop the file you downloaded. <br> Login by clicking on the chrome extension and you are ready to GO!";
 
         center.appendChild(head);
         center.appendChild(lineBreak);
