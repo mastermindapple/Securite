@@ -58,7 +58,7 @@ function getUserName(id) {
       .then((snapshot) => {
         childData = snapshot.val();
         if (childData.name !== undefined || childData.name !== null) {
-          if (childData.badSites == undefined) {
+          if (childData.goodSites == undefined) {
               giveError("Your child has not visited any sites.");
           } else {
             displaySites(childData.goodSites,id);
@@ -77,14 +77,23 @@ function getUserName(id) {
   }
 
   function displaySites(sites,id) {
-    console.log(sites);
+    var splittedArr = []
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     for(site in sites){
       var row = document.createElement("tr");
       row.classList = "row";
-  
+      //shortening the url
+      if(sites[site].url.split('').length > 20){
+        var splitted = sites[site].url.split('');
+        for(var x = 0; x<20; x++){
+          console.log(splitted[x])
+          splittedArr.push(splitted[x]);
+        }       
+        console.log(splittedArr)
+      }
+
       var url = document.createElement("td");
-      url.innerHTML = "<a id='url-link' target= '_blank' href='" + sites[site].url + "'>"+sites[site].url + "</a>";
+      url.innerHTML = "<a id='url-link' target= '_blank' href='" + sites[site].url + "'>"+splittedArr.join('')+"..."+ "</a>";
       url.classList = "urls";
 
       var date = document.createElement("td");
@@ -98,6 +107,7 @@ function getUserName(id) {
       row.appendChild(time);
       document.getElementById("table").appendChild(row);
       giveError("");
+      splittedArr = [];
     }
   }
 
