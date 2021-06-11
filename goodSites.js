@@ -97,7 +97,7 @@ function getUserName(id) {
       url.classList = "urls";
 
       var date = document.createElement("td");
-      date.innerHTML = sites[site].date + ", " + months[sites[site].month + 1] + "," + sites[site].year;
+      date.innerHTML = sites[site].date + ", " + months[sites[site].month] + "," + sites[site].year;
   
       var time = document.createElement("td");
       time.innerHTML = sites[site].hour + ":" + sites[site].minute + ":" + sites[site].second;
