@@ -78,18 +78,29 @@ function loadSites(username, id) {
 }
 
 function displaySites(sites,id) {
+  var splittedArr = [];
   console.log(sites);
   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   for(site in sites){
+
+    if(sites[site].url.split('').length > 20){
+      var splitted = sites[site].url.split('');
+      for(var x = 0; x<20; x++){
+        console.log(splitted[x])
+        splittedArr.push(splitted[x]);
+      }       
+      console.log(splittedArr)
+    }
+
     var row = document.createElement("tr");
     row.classList = "row";
 
     var url = document.createElement("td");
-    url.innerHTML = "<a id='url-link' target= '_blank' href='" + sites[site].url + "'>"+sites[site].url + "</a>";
+    url.innerHTML = "<a id='url-link' target= '_blank' href='" + sites[site].url + "'>"+splittedArr.join('')+ "</a>";
     url.classList = "urls";
 
     var date = document.createElement("td");
-    date.innerHTML = sites[site].date + ", " + months[sites[site].month + 1] + "," + sites[site].year;
+    date.innerHTML = sites[site].date + ", " + months[sites[site].month] + "," + sites[site].year;
 
     var time = document.createElement("td");
     time.innerHTML = sites[site].hour + ":" + sites[site].minute + ":" + sites[site].second;
@@ -103,6 +114,7 @@ function displaySites(sites,id) {
     row.appendChild(badWordCount);
     document.getElementById("table").appendChild(row);
     giveError("");
+    splittedArr = [];
   }
 }
 
